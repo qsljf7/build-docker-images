@@ -1,0 +1,10 @@
+ SOLR_VERSION="8.7.0"
+SOLR_SHA512="15a3af83997e2cbc4bfed304f7d43efd260674d98059241605ff3cde0ae02d8bd1ccd56973c6cba1cc11895655bb76fcf1991bbb94b004e517ce15f728fa163f"
+ SOLR_KEYS="7D8D90F8F64F23077AC87CF7CB77CB79928BB0EC"
+ SOLR_DOWNLOAD_URL
+
+ SOLR_DOWNLOAD_SERVER
+for url in $SOLR_DOWNLOAD_URL $SOLR_CLOSER_URL $SOLR_DIST_URL $SOLR_ARCHIVE_URL; do \
+    echo "downloading $url"; \
+wget -t 10 --max-redirect 1 --retry-connrefused -nv "$url" -O "/opt/solr-8.7.0.tgz"
+done
